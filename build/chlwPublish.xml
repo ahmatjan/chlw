@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="upload.prod" name="chlw">
+	<property name="chlw.location" value="../../chlw" />
+	<property name="ECLIPSE_HOME" value="../../eclipse" />
+	<property name="jrtBetcodeResolve.location" value="../../jrtBetcodeResolve"/>
+    <property name="jrtInvokeLot.location" value="../../jrtInvokeLot"/>
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<property environment="env" />
+
+	<property file="build.properties" />
+	<property file="publish.properties" />
+	<property name="full.version" value="${majorVersion}.${minorVersion}.${releaseNumber}.${build.number}" />
+
+	<path id="Web App Libraries.libraryclasspath">
+		<pathelement location="../../../jrtInvokeLot"/>
+        <pathelement location="../../../jrtBetcodeResolve"/>
+		<pathelement location="../WebContent/WEB-INF/lib/*"/>
+		<pathelement location="../WebContent/WEB-INF/classes" />
+	</path>
+
+	<path id="EAR Libraries.libraryclasspath"/>
+    <path id="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath">
+        <pathelement location="D:/tomcat6/lib/*"/>
+    </path>
+	
+    <path id="chlw.classpath">
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath"/>
+    	<path refid="jrtBetcodeResolve.classpath"/>
+        <path refid="jrtInvokeLot.classpath"/>
+    	<pathelement location="D:/tomcat6/wtpwebapps/chlw/WEB-INF/lib/jrtBetcodeResolve.jar"/>
+    	<pathelement location="D:/tomcat6/wtpwebapps/chlw/WEB-INF/lib/jrtInvokeLot.jar"/>
+    </path>
+
+	<target name="init" depends="clean">
+		<mkdir dir="../build/classes" />
+		<copy includeemptydirs="false" todir="../build/classes">
+			<fileset dir="../src" excludes="**/*.launch, **/*.java" />
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="../build/classes" />
+		<delete dir="../build/WebContent" />
+	</target>
+
+	<property name="server-username" value="root" />
+	<property name="staging-server-password" value="testroot" />
+	<property name="staging-server-address" value="192.168.0.184" />
+	<property name="staging-upload-dir" value="/usr/local/tomcat6/webapps/" />
+	<property name="staging" value="./staging" />
+	<property name="upline" value="./upline" />
+	<property name="prod" value="./prod" />
+	<property name="war-name" value="chlw.war" />
+
+	<target name="upload.prod" description="编译打包-上传到运营环境">
+		
+		<delete file="../build/staging/${war-name}" />
+		<delete file="../build/prod/${war-name}" />
+		<delete file="MANIFEST.MF" />
+
+		<copy todir="../build/WebContent/">
+			<fileset dir="../WebContent" includes="**/*" />
+		</copy>
+		<copy todir="../build/WebContent/WEB-INF/classes">
+			<fileset dir="./../build/classes" includes="**/*" />
+		</copy>
+		
+		<echo>copy import project jar to lib...</echo>
+		<copy overwrite="true" tofile="./../build/WebContent/WEB-INF/lib/jrtInvokeLot.jar" file="D:/tomcat6/wtpwebapps/chlw/WEB-INF/lib/jrtInvokeLot.jar" />
+		<copy overwrite="true" tofile="./../build/WebContent/WEB-INF/lib/jrtBetcodeResolve.jar" file="D:/tomcat6/wtpwebapps/chlw/WEB-INF/lib/jrtBetcodeResolve.jar" />
+		<!--测试服务器的chlw打包，并备份 -->
+		<echo>copy Linux Service properties...</echo>
+		<copy overwrite="true" tofile="./../build/WebContent/WEB-INF/classes/ruyicai.properties" file="./184/ruyicai.properties" />
+		<copy overwrite="true" tofile="./../build/WebContent/WEB-INF/classes/jrtCoreInterface.properties" file="./184/jrtCoreInterface.properties" />
+		<manifest file="MANIFEST.MF">
+			<!--attribute name="Built-By" value="${user.name}" /-->
+			<attribute name="chlwSite-Version" value="${majorVersion}.${minorVersion}.${releaseNumber}.${build.number}" />
+		</manifest>
+		<war warfile="../build/staging/${war-name}" webxml="./WebContent/WEB-INF/web.xml" manifest="MANIFEST.MF">
+			<fileset dir="./../build/WebContent" />
+		</war>
+		
+				
+		<!--property name="scp-con-staging" value="${server-username}:${staging-server-password}@${staging-server-address}:${staging-upload-dir}" />
+		<echo>从测试环境下载prod w.war</echo>
+		<scp file="${scp-con-staging}/${war-name}" todir="${prod}" trust="true" /-->
+
+		<tstamp>
+			<format property="TODAY_CN" pattern="yyyyMMddHHmmss" locale="en,UK" />
+		</tstamp>
+
+		<echo>在前置机备份prod chlw.rar  ${staging}/${war-name} =》  ${prod}/${TODAY_CN}_${war-name} </echo>
+		<copy overwrite="true" tofile="${prod}/${TODAY_CN}_${war-name}" file="${staging}/${war-name}" />
+		
+		 <!--sshexec host="${prod-server-address}" trust="true" 
+			username="${server-username}"
+			password="${prod-server-password}"
+		 	command="cp -r ${staging-upload-dir}/chlw ~/backup/chlw_${TODAY_CN}" verbose="true" failonerror="false"/-->
+
+		<sshexec host="${staging-server-address}" trust="true" 
+			username="${server-username}"
+			password="${staging-server-password}"
+		 	command="cd ${staging-upload-dir} &amp;&amp; rm -rf chlw ${war-name}" verbose="true" failonerror="false"/>
+		
+		<sshexec host="${staging-server-address}" trust="true" 
+					username="${server-username}"
+					password="${staging-server-password}"
+				 	command=". .bash_profile &amp;&amp; ps auxf|grep tomcat6/ |grep -v grep | awk {'printf &quot;kill -9 %s\n&quot;, $2'} |sh " verbose="true" failonerror="false" />
+				 
+		
+		<property name="scp-con-prod" value="${server-username}:${staging-server-password}@${staging-server-address}:${staging-upload-dir}" />
+		<echo>上载staging ${staging}/${war-name}到运营系统</echo>
+		<scp file="${staging}/${war-name}" todir="${scp-con-prod}" trust="true" />
+		
+		 
+		<sshexec host="${staging-server-address}" trust="true" 
+					username="${server-username}"
+					password="${staging-server-password}"
+				 	command=". .bash_profile &amp;&amp; /usr/local/tomcat6/bin/startup.sh " verbose="true" failonerror="false" />
+		<!--正式服务器chlw打包，并备份 -->
+		<echo>copy upline Linux Service properties...</echo>
+		<copy overwrite="true" tofile="./../build/WebContent/WEB-INF/classes/ruyicai.properties" file="./upline/ruyicai.properties" />
+		<war warfile="${upline}/${war-name}" webxml="./WebContent/WEB-INF/web.xml" manifest="MANIFEST.MF">
+			<fileset dir="./WebContent" />
+		</war>
+	</target>
+
+</project>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ <struts>  
+	 
+<!-- ================================3g彩票网的配置============================================= -->	 
+	   <!--begin 登录之后才能访问的action -->
+   <package name="3guser" namespace="/3guser" extends="struts-default">
+   		<!-- struts2.0的全局跳转    -->
+		<global-results>
+			<result name="login_error" >/function/user/toLogin.jsp</result>
+			<result name="error">/backResult/error.jsp</result> 
+			<result name="formError">/backResult/formError.jsp</result> 
+		</global-results> 
+        <!-- 用户中心的跳转 -->
+		<action name="3g_tuser" class="com.ruyicai.web.action.TuserinfoAction">
+			<result name="changePasswordSuccess" >/page/3gcaipiao/user/updatePassword.jsp</result>
+			<result name="cash" >/page/3gcaipiao/user/cash.jsp</result>
+			<result name="cashDetail" >/page/3gcaipiao/user/cashDetail.jsp</result>
+			<result name="updateCashDetail" >/page/3gcaipiao/user/updateCashDetail.jsp</result>			
+			<result name="cancelTcashDetail">/page/3gcaipiao/user/cashDetail.jsp</result>
+			<result name="doUpdateCashDetail">/page/3gcaipiao/user/cashDetai.jsp</result>
+			<!--<result name="cashCert">/page/3gcaipiao/user/cashCert.jsp</result>
+			<result name="cashCert">/page/3gcaipiao/user/cash.jsp</result>-->
+			<result name="index">/page/ruyicai/ssq/ruyicai_channel_ssq.jsp</result>
+			<result name="setNickName">/page/3gcaipiao/user/setNickName.jsp</result>
+		</action>
+		<action name="3g_tuser_new" class="com.ruyicai.web.action.ThreeGCaiPiao">
+			<result name="changeTuserinfo" >/page/3gcaipiao/user/personalMessage.jsp</result>
+			<result name="setNickName">/page/3gcaipiao/user/setNickName.jsp</result>
+			<result name="setNickNameSuccess">/page/3gcaipiao/user/setNickNameSuccess.jsp</result>
+			<result name="certidBand" >/page/3gcaipiao/user/certidBand.jsp</result>
+			<result name="certidBandSuccess" >/page/3gcaipiao/user/certidBandSuccess.jsp</result>
+			<result name="emailBandCheck" >/page/3gcaipiao/user/emailCheck.jsp</result>
+			
+			<result name="emailBandSuccess" >/page/3gcaipiao/user/emailBandSuccessByEmail.jsp</result>
+			<result name="emailBand" >/page/3gcaipiao/user/emailBand.jsp</result>
+			<result name="updateEmailBand" >/page/3gcaipiao/user/updateEmailBand.jsp</result>
+			<!-- <result name="cashCert">/page/3gcaipiao/user/cashCert.jsp</result> -->
+			<result name="cash" >/page/3gcaipiao/user/cash.jsp</result>
+			<result name="cashDetail" >/page/3gcaipiao/user/cashDetail.jsp</result>
+		</action>
+		
+		
+		<action name="3g_selectAll" class="com.ruyicai.web.action.SelectAllAction">
+			<result name="drawalotteryDetail">/function/query/drawalotterySelect.jsp</result>
+		    <result name="personMsg" >/function/user/personalMessage.jsp</result>
+			<result name="winSelect" >/function/query/winSelect.jsp</result>
+			<result name="giftSelect" >/function/query/giftSelect.jsp</result>
+			<result name="giftedSelect" >/function/query/giftedSelect.jsp</result>
+			<result name="accountDetail" >/page/3gcaipiao/query/accountDetail1.jsp</result>
+			<result name="betSelect" >/page/3gcaipiao/query/threeBetSelectAll.jsp</result>
+			<result name="drawalotterySelect">/function/query/drawalotterySelect.jsp</result>
+			<result name="trackingNumberSelectAll">/page/3gcaipiao/query/threeTrackNumberSelect.jsp</result>
+			<result name="betSelectCount">/page/3gcaipiao/query/threeBetSelect.jsp</result>
+			<result name="getOneBetInfo">/page/3gcaipiao/query/getBetInfo.jsp</result><!-- 新接口查询一条投注信息 -->
+		</action>
+		
+		<!-- 投注的功能 -->	
+		<action name="bet" class="com.ruyicai.web.action.BettingAction">
+		    <result name="betBack">/backResult/betBack.jsp</result>
+		</action>
+		
+		<!-- 用户充值跳转 -->	
+		<action name="3g_charge" class="com.ruyicai.web.action.ChargeAction">
+		    <result name="chargeIndex">/function/charge/chargeIndex.jsp</result>
+		</action>
+		
+	</package>
+	
+<!-- 未登录之前能访问的action -->	  
+	<package name="3gfunction" namespace="/3gfunction" extends="struts-default">
+ 		 <!-- struts2.0的全局跳转    -->
+		<global-results>
+			<result name="login_error" >/</result>
+			<result name="error">/backResult/error.jsp</result> 
+			<result name="formError">/backResult/formError.jsp</result> 
+		</global-results>
+   		 <!-- 全局异常 -->   
+       <global-exception-mappings>   
+           <exception-mapping result="error" exception="java.lang.Exception"/>   
+       </global-exception-mappings>   
+		
+	<!-- struts2.0的局部跳转 -->
+	   	<!-- 注册1的跳转 -->
+		<action name="3g_tuser" class="com.ruyicai.web.action.TuserinfoAction">
+			
+	   </action>
+	   	   <!-- 注册2的跳转 -->
+		<action name="3g_tuser2" class="com.ruyicai.web.action.ThreeGCaiPiao">
+			<result name="cerSuccess">/page/3gcaipiao/user/certificationSuccess.jsp</result>
+			<result name="certification">/page/3gcaipiao/user/certification.jsp</result>
+			<result name="indexLogin">/page/3gcaipiao/user/indexLogin.jsp</result>
+			
+	   </action>
+	    <!-- 找回密码的跳转 -->
+	   <action name="3g_findtuser2" class="com.ruyicai.web.action.FindPwdAction">
+	   		<result name="findPwdWay">/page/3gcaipiao/user/chooseFindPwdWay.jsp</result>
+			<result name="backcodeMobile">/page/3gcaipiao/user/backCodeByMobile.jsp</result>
+			<result name="updateFindPwd">/page/3gcaipiao/user/updateFindPwd.jsp</result>
+			<result name="updateFindPwdByEmail">/page/3gcaipiao/user/updateFindPwdByEmail.jsp</result>
+			<result name="backCodeByEmail">/page/3gcaipiao/user/backCodeByEmail.jsp</result>
+	  		<result name="successPwd">/page/3gcaipiao/user/successPwd.jsp</result>
+	   </action>
+	   
+	   <!-- #########所有查询的Action########## -->
+	    <action name="caipiao_3g" class="com.ruyicai.web.action.SelectAllAction">
+	    	<!-- 首页开奖公告 -->
+			<result name="drawalotteryIndex">/page/3gcaipiao/query/3gcaipiaoIndexMiddle.jsp</result>
+			<!-- 开奖公告详细页面 -->
+			<result name="drawalotteryDetail">/page/3gcaipiao/query/lotteryInfo.jsp</result>		
+		</action>
+		
+	    <action name="3gcaipiao_select" class="com.ruyicai.web.action.SelectAllAction">
+		  <!-- 3g彩票网左侧显示详细开奖公告 -->
+		 	<result name="drawalotteryIndex">/page/3gcaipiao/query/leftLotterySelect.jsp</result>
+		  <!-- 3g彩票网左侧显示8条开奖公告 -->
+		 	<result name="drawalotteryDetail">/page/3gcaipiao/query/nightdrawalottery.jsp</result>
+		 </action>	
+		 
+		 <!-- 3g彩票网历史开奖公告 -->
+		 <action name="3gcaipiao_select_history" class="com.ruyicai.web.action.SelectAllAction">
+		 	<result name="drawalotteryDetail">/page/3gcaipiao/query/lotteryHistory.jsp</result>	
+		 </action>	
+		
+		<!-- 投注的功能 -->	
+		<action name="bet" class="com.ruyicai.web.action.BettingAction"></action>
+		
+		<!-- 联合登录的action -->
+		<action name="3g_UnitedLogin" class="com.ruyicai.web.action.UnitedLoginAction">
+			<result name="setNickName">/function/user/ruyicai_setNickName.jsp</result>
+		</action>
+	</package>
+</struts>

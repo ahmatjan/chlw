@@ -1,0 +1,179 @@
+﻿@charset "utf-8";
+.userbox{width:820px;height:auto; float:left; border:1px solid #b70404; margin:10px 0 10px 10px;}
+.user_head{ width:820px; height:28px; background:url(/chlw/page/ruyicai/images/user/head_bg.gif) repeat-x;}
+.user_zi{ width:105px; height:28px; font:13px "新宋体"; color:#b70404; font-weight:bold; margin-left:20px;line-height:28px; float:left; }
+.user_zi1{ width:500px; height:28px; font:12px "新宋体"; font-weight:bold; margin-left:0px;line-height:28px; float:left; }
+.user_content{ width:800px;height:auto; margin:10px;}
+
+/*用户中心主页*/
+.homebox{width:519px;height:200px; float:left; border:1px solid #b70404; margin:10px 0 10px 10px; float:left;}
+.home_head{ width:519px; height:28px; background:url(/chlw/page/ruyicai/images/user/head_bg.gif) repeat-x;}
+.home_zi{ width:125px; height:28px; font:13px "新宋体"; color:#b70404; font-weight:bold; margin-left:20px;line-height:28px; }
+.home_content{ width:499px;height:auto; margin:10px;}
+.home_gonggao{ width:290px;height:200px; overflow:hidden; float:left; border:1px solid #a09f9f; margin:10px 0 10px 10px; float:left;}
+.gonggao_head{  width:290px; height:28px; background:url(/chlw/page/ruyicai/images/user/gonggao_bg.gif) repeat-x; border-bottom:1px solid #a09f9f}
+.gonggao_zi{ width:125px; height:28px; font:13px "新宋体"; color:#000; font-weight:bold; margin-left:20px;line-height:28px; }
+.home_con{ width:350px; height:172px; float:left;}
+.home_money{ width:290px; height:78px; margin:20px 20px 10px 30px; }
+.home_money ul{ display:block;}
+.home_money li{ width:280px; height:25px; line-height:25px; font:14px "宋体"; font-weight:bold;}
+.chongzhi_btn{ width:102px; height:33px; margin-left:50px;}
+.home_red{ font:13px "宋体";  color:#FF0000; margin-left:20px;}
+.home_pic{ margin:20px; float:left;}
+.gonggao_list{ width:290px; height:170px;}
+.gonggao_list ul { width:270px; height:170px; margin-left:20px; display:block;}
+.gonggao_list li{ width:270px; height:25px; line-height:25px; float:left;color:#014087; background:url(/chlw/page/ruyicai/images/user/gonggao_list.gif) no-repeat center left; }
+.gonggao_shj{ width:70px; height:25px; margin-left:80px; color:#646464;}
+
+.nearbox{width:519px;height:270px; float:left; border:1px solid #b70404; margin:10px 0 10px 10px; float:left;}
+.near_biao{ height:30px; border-bottom:2px solid #b70404; line-height:30px; text-align:center; font:14px "宋体"; font-weight:bold; }
+.near_biao1{ height:20px; line-height:20px; text-align:center; }
+
+
+
+
+
+/*投注记录*/
+.record_title{ width:800px; height:26px; margin:0; padding:0; border-bottom:2px solid #b70404; }
+.record_title_zi{ width:114px; height:26px; background:url(/chlw/page/ruyicai/images/user/jilu.gif) no-repeat; font:13px "新宋体"; color:#fff; font-weight:bold; margin-left:20px;line-height:26px; text-align:center; }
+.record_cx{ width:760px; height:40px; margin:0 20px; padding:0;}
+.record_chax{ width:230px; height:18px; float:left; font:13px "新宋体"; line-height:18px; margin-top:6px;}
+.record_chax input{ width:80px; height:18px; line-height:18px; }
+.chx_btn{ width:71px; height:25px; display:block; float:left; margin-top:6px;background:url(/chlw/page/ruyicai/images/user/chax_btn.gif) no-repeat;border:0;}
+.chx_btn1{ width:71px; height:25px; display:block; float:left; background:url(/chlw/page/ruyicai/images/user/chax_btn.gif) no-repeat;border:0;}
+.record_jieg{ width:250px; height:20px; float:left; line-height:20px; margin:10px auto 10px 20px;;}
+.red_text{ color: #b70404;}
+.blue_text{color: #004087;}
+.record_content{ width:800px; height:auto; border:1px solid #f78739; }
+.record_biao1{ height:37px; border-left:1px solid #f78739; border-top:1px solid #f78739; background:#ffe2b8; line-height:37px; text-align:center; }
+.record_biao2{ height:28px; border-left:1px solid #f78739; border-top:1px solid #f78739; background:#fff; line-height:28px; text-align:center; }
+.record_biao3{ height:28px; border-left:1px solid #f78739; border-top:1px solid #f78739; background:#fef1df;line-height:28px; text-align:center; }
+.record_biao4{height:28px; border-left:1px solid #f78739; border-top:1px solid #f78739; background:#fef1df;line-height:28px; text-align:center;}
+.re_note{ width:820px;height:30px; float:left; margin-left:15px; margin-top:10px; font:12 "宋体";}
+
+/*追号记录*/
+.record_zh{ width:760px; height:40px; margin:0 20px; padding:0;}
+.record_zhh{ width:560px; height:18px; float:left; font:13px "新宋体"; line-height:18px; margin-top:6px;}
+.record_zhh span{ margin-right:8px;}
+.record_zhh input{ width:80px; height:18px; line-height:18px;}
+
+/*个人信息*/
+.news_content{ width:800px; height:auto; border:1px solid #f78739; margin-bottom:10px; }
+.news_biao{ height:37px;background:#ffe2b8; line-height:37px; font:13px "新宋体"; font-weight:bold; padding-left:20px;}
+.news_biao1{ height:89px; border-bottom:1px solid #f78739; background:#fff;text-align:center; }
+.news_biao1 img{ width:45px; height:45px; margin:22px 22px;}
+.news_biao2{ height:28px; border-left:1px solid #f78739; border-bottom:1px solid #f78739; background:#fef1df; line-height:28px; padding-left:10px; }
+.news_biao3{ height:28px; border-left:1px solid #f78739; border-bottom:1px solid #f78739;background:#fef1df; line-height:28px; text-align:center; }
+.news_biao4{ height:28px; border-left:1px solid #f78739; border-bottom:1px solid #f78739;background:#fff; line-height:28px; text-align:center; }
+.news_biao5{ height:37px;background:#ffe2b8; line-height:37px; font:13px "新宋体"; font-weight:bold;   border-left:1px solid #f78739;padding-left:20px; line-height:37px; text-align:center;}
+.news_zhanghu{ margin-left:20px; color:#b70404;}
+
+/*修改密码*/
+.repas_content{ width:800px; height:auto; border:1px solid #f78739; margin-top:10px; }
+.repas_content ul{ width:780px; height:110px; display:block; margin-left:20px;  margin-top:5px; }
+.repas_content li{width:780px; height:30px; margin:5px auto; line-height:30px; font:13px "宋体"; }
+.repas_submit{width:75px; height:30px; margin:10px auto 10px 100px; background:url(/chlw/page/ruyicai/images/user/repas_btn.gif) no-repeat; border:0;}
+
+/*账户变动记录*/
+.account_page{width:780px; height:14px; line-height:14px; text-align:center; font:13px "宋体"; float:left; margin:10px;}
+.account_page span{ margin:0 5px; font-weight:bold; color:#b70404; font:14px "宋体";}
+
+/*手机服务*/
+.phone_hm{ width:305px; height:85px; float:left; margin:14px 50px 28px 25px;}
+.phone_hch{width:365px; height:85px; border:1px solid #f78739;  margin:14px 15px 28px 0px;float:left;}
+.renzhenghao{ width:305px; height:20px; line-height:20px; text-align:center; font:14px "宋体"; font-weight:bold;}
+.renzhenghao img{ position:relative; top:2px; margin-right:5px;}
+.renzheng_btn{width:305px; height:36px; text-align:right; margin-top:25px;}
+.hui_text{ color:#909090;}
+.phone_good{ width:225px; height:65px; float:left; margin:10px; line-height:26px;}
+.good_title{ font:13px "宋体"; font-weight:bold; margin-top:10px;}
+.phone_tu{ float:right; margin:10px;}
+.phone_content{ width:800px;height:100px; float:left; margin-left:10px; margin-bottom:10px; border:1px solid #f78739;}
+.phone_con{ width:790px; height:30px; margin:10px auto; color:#333;}
+
+/*账户明细*/
+.account_month{width:800px; height:30px;  font:13px "宋体"; border-bottom:1px dashed #a09f9f; margin-bottom:10px;}
+.account_month span{ color:#b70404; margin-right:10px;  font:14px "宋体"; font-weight:bold;float:left; line-height:30px;}
+.account_heji{ width:300px; height:25px; line-height:25px; text-align:center; float:right; margin-bottom:10px;}
+.account_content{ width:800px; height:auto; float:left; border:1px solid #f78739; }
+
+/*充值记录*/
+.zijin_nav{ width:800px; height:25px; border-bottom:2px solid #b70404; margin-bottom:15px; }
+.zijin_nav ul{ width:800px; height:25px; display:block;}
+.zijin_nav li{ float:left; width:114px; height:25px; margin-left:5px; background:url(/chlw/page/ruyicai/images/user/uesr_bg.gif) no-repeat;text-align:center; }
+.zijin_nav a:hover{ width:114px; height:25px; font:14px "宋体"; line-height:25px;}
+.zijin_nav a{ width:114px; height:25px; font:14px "宋体"; line-height:25px;display:block; }
+.zijin_yue{ width:350px; height:25px; line-height:25px; margin-left:20px;}
+.zijin_tishi{ width:780px; height:14px; line-height:14px; font:13px "宋体"; float:left; margin:10px 0 10px 10px;}
+
+
+.hout{width:114px; height:25px; color:#000; font:14px "宋体"; line-height:25px; background:url(/chlw/page/ruyicai/images/user/uesr_bg1.gif) no-repeat;text-align:center;}
+.hover{ width:114px; height:25px; color:#fff; font:14px "宋体"; line-height:25px; background:url(/chlw/page/ruyicai/images/user/uesr_bg.gif) no-repeat;text-align:center; }
+
+
+/*话费充值卡充值*/
+.card_sel{width:200px; height:25px; line-height:25px; margin-left:10px; font-weight:bold;}
+.card_title{ width:780px; height:30px; line-height:30px;  border-bottom:1px dashed #a09f9f; margin:0 10px;}
+.card_con{ width:780px; height:46px; margin:10px 10px 0px 10px;}
+.card_con ul{ display:block;width:780px; height:46px; }
+.card_con li{ width:245px; height:46px; float:left; text-align:center; }
+.card_con li img{ margin-left:10px;}
+.card_value{ width:780px; height:46px; margin:0px 10px 10px 10px;}
+.card_value ul{ display:block;width:780px; height:46px; }
+.card_value li{ width:135px; height:40px; float:left; line-height:20px; text-align:center; margin-left:100px;}
+.card_conf{ width:780px; height:200px; margin:0px 10px 10px 10px;}
+.card_conf ul{ display:block; width:700px; height:180px; margin-top:20px; margin-left:10px; }
+.card_conf li{ width:700px; height:35px; line-height:35px;}
+.card_conf li span{ margin-left:10px; margin-right:10px; font:15px "宋体"; font-weight:bold;}
+.huang_text{ color:#f48226;}
+.card_pas{ width: 700px; height:115px; margin:10px;}
+.card_num{ width:700px; height:24px;  margin-left:10px; font:14px "宋体"; line-height:24px; }
+.card_num input{ width:195px; height:24px; border:2px solid #dbdbdb; margin-left:10px; position:relative;top:-4px; line-height:24px; }
+.card_xianzhi{ height:24px;font:12px "宋体"; color:#FF0000;  line-height:24px;  margin:10px 10px 10px 80px;}
+.card_btn{ width:145px; height:37px; margin-left:237px; background:url(/chlw/page/ruyicai/images/queren_btn.gif) no-repeat; border:0;}
+.card_btn1{ width:145px; height:37px; margin-left:237px; margin-top:15px;background:url(/chlw/page/ruyicai/images/queren_btn.gif) no-repeat; border:0;}
+.card_hold{ width:300px; height:37px; margin:0; margin-left:10px; margin-top:15px;font:12px "宋体"; color:#ff0000; float:left; line-height:37px;}
+.card_1{ width:400px; height:37px; margin:0; float:left;}
+.card_bottom{ width:780px; height:37px; margin:0;}
+
+/*提款记录*/
+.draw_tikuan{ width:780px; height:170px;line-height:30px; font:13px "宋体"; float:left; margin:20px 10px 10px 10px;}
+.draw_tikuan span{ height:20px; line-height:20px;}
+.draw_tikuan a{ color:#004087;}
+/*充值*/
+.card_money{ width:780px; height:20px; margin:10px; padding:0;}
+.card_money input{ width:95px; height:20px; border:1px solid #dbdbdb; margin-left:10px; line-height:20px;}
+.card_bank{ width:780px; height:80px; margin:0px 10px 10px 10px; border-bottom:1px dashed #a09f9f;}
+.card_bank ul{ display:block; width:760px; margin-top:20px; margin-left:10px; }
+.card_bank li{ width:190px; height:20px; line-height:20px; float:left; text-align:center; margin:5px auto;}
+.card_bank li input{ position:relative; top:-3px;}
+.card_bank li img{ margin-left:5px;}
+.card_btn span{ width:185px; height:34px; padding:0; color:#FF0000; font:12px "宋体"; position:relative; top:-10px; left:10px;}
+.card_bank1{ width:780px; height:60px; margin:0px 10px 10px 10px;  }
+.card_bank1 ul{ display:block; width:760px; margin-top:10px; margin-left:10px;}
+.card_bank1 li{ width:190px; height:20px; line-height:20px; float:left; text-align:center; margin:5px auto;}
+.card_bank1 li input{ position:relative; top:-3px;}
+.card_bank1 li img{ margin-left:5px;}
+.span{color:#ff0000;}
+.card_biao1{border-bottom:1px solid #f78739; border-right:1px solid #f78739; text-align:center; background:#feefd8;height:50px ;width: 150px; }
+.card_biao2{border-bottom:1px solid #f78739; padding-left:10px; }
+
+/*提款*/ 
+.tikuan_content{ width:798px; height:auto;  border:1px solid #f78739;}
+.tikuan_biao1{border-top:1px solid #f78739; border-left:1px solid #f78739; text-align:center; background:#feefd8;height:40px ;width: 100px; }
+.tikuan_biao2{border-top:1px solid #f78739; border-left:1px solid #f78739; padding-left:10px; }
+.tikuan_biao3{border-top:1px solid #f78739; border-left:1px solid #f78739; padding-left:10px; }
+.tikuan_biao4{border-top:1px solid #f78739; padding-left:10px; }
+.tikuan_biao5{ border-left:1px solid #f78739; padding-left:10px; }
+.tikuan_biao6{ width:332px;height:62px; border-top:1px solid #f78739; border-left:1px solid #f78739; text-align:center;}
+.xiugai_btn{ width:77px; height:26px; background:url(/chlw/page/ruyicai/images/user/tixian_btn.gif) no-repeat; margin:10px 320px; border:0; }
+.xiugai_btn1{ width:78px; height:26px; background:url(/chlw/page/ruyicai/images/user/re_text.gif) no-repeat; margin:10px 20px 10px 300px; border:0; }
+.xiugai_btn2{ width:78px; height:26px; background:url(/chlw/page/ruyicai/images/user/chexiao.gif) no-repeat; margin:10px; border:0; }
+.xiugai_btn3{ width:77px; height:26px; background:url(/chlw/page/ruyicai/images/user/retixian.gif) no-repeat; margin:10px 320px; border:0; }
+.xiugai_btn4{ width:77px; height:26px; background:url(/chlw/page/ruyicai/images/user/jxtx.gif) no-repeat; margin:10px 320px; border:0; }
+.xiugai_btn5{ width:77px; height:26px; background:url(/chlw/page/ruyicai/images/user/xiugai.gif) no-repeat; margin:10px 320px; border:0; }
+
+.tikuan_biao2 input{  width:95px; height:16px; border:1px solid #dbdbdb; line-height:16px;}
+.red{ color:#FF0000; font-weight: bold;}
+.reset_pas{ height:15px; font:12px "宋体";  position:relative; top:20px; *left:230px; color:#004187;}
+.qingkong{ color:#FF0000;   position:relative; top:-7px; margin-left:10px;  }

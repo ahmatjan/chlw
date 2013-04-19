@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ <struts>  
+ <!--begin 登录之后才能访问的action -->
+   <package name="user" namespace="/user" extends="struts-default">
+   <!-- struts2.0的全局跳转    -->
+		<global-results>
+			<result name="login_error" >/function/user/login.jsp</result>
+			<result name="error">/backResult/error.jsp</result> 
+		</global-results> 
+        <!-- 用户中心的跳转 -->
+		<action name="tuserinfoAction" class="com.ruyicai.web.action.TuserinfoAction">
+			<result name="changePassword" >/function/user/updatePassword.jsp</result>
+			<result name="cashDetail" >/function/user/cashDetail.jsp</result>
+			<result name="updateCashDetail" >/function/user/updateCashDetail.jsp</result>
+			<result name="changeTuserinfo" >/function/user/updateMessage.jsp</result>
+			<result name="index">/index.jsp</result>
+		</action>
+		
+	<!-- 用户查询跳转 -->	
+		<action name="selectAll" class="com.ruyicai.web.action.SelectAllAction">
+			<result name="findBalance" >/query/findBalance.jsp</result>
+			<!-- <result name="betSelect">/query/betSelect.jsp</result> -->
+			<result name="winSelect" >/query/winSelect.jsp</result>
+			<result name="giftSelect" >/query/giftedSelect.jsp</result>
+			<result name="giftedSelect" >/query/giftedSelect.jsp</result>
+			<result name="accountDetail" >/query/accountDetail.jsp</result>
+			<result name="betSelect" >/query/betSelect1.jsp</result>
+			<result name="drawlotterSelect" >/query/drawlotterSelect.jsp</result>
+		</action>
+	
+	<!-- 用户充值跳转 -->	
+		<action name="charge" class="com.ruyicai.web.action.ChargeAction">
+		    <result name="chargeIndex">/charge/chargeIndex.jsp</result>
+		    <result name="minsheng">/charge/minsheng.jsp</result>
+		</action>
+	<!-- 投注的功能 -->	
+		<action name="bet" class="com.ruyicai.web.action.BettingAction">
+		    <result name="betBack">/backResult/betBack.jsp</result>
+		    <result name="betSuccess">/backResult/betSuccess.html</result>
+		    <result name="betFail">/backResult/betFail.html</result>
+		</action>
+		
+   </package>
+<!-- end 登录之后才能访问的action -->
+   
+	<package name="function" namespace="/function" extends="struts-default">
+  <!-- struts2.0的全局跳转    -->
+		<global-results>
+			<result name="login_error" >/function/user/login.jsp</result>
+			<result name="error">/backResult/error.jsp</result> 
+		</global-results>
+    <!-- 全局异常 -->   
+       <global-exception-mappings>   
+           <exception-mapping result="error" exception="java.lang.Exception"/>   
+       </global-exception-mappings>   
+		
+	<!-- struts2.0的局部跳转 -->
+	<!-- 首页跳转 -->
+	    <action name="indexAction" class="com.ruyicai.web.action.IndexAction">
+		   <result name="index">/display.jsp</result>
+		   <result name="index">/index.jsp</result>
+		   <result name="login" >/function/user/login.jsp</result>
+		   <result name="register">/function/user/register.jsp</result>
+		</action>
+		
+		<!-- 用户中心的跳转 -->
+		<action name="tuserinfoAction" class="com.ruyicai.web.action.TuserinfoAction">
+			<result name="login" >/function/user/login.jsp</result>
+			<result name="index">/index.jsp</result>
+	   </action>
+		
+		<!-- 新闻跳转
+		<action name="newsAction" class="com.ruyicai.web.action.NewsAction">
+		  <result name="index">/news/index.jsp</result>	  
+		</action>
+		新闻模块跳转 
+		<action name="newsCommonAction" class="com.ruyicai.web.action.StyleViewAction">
+		   <result name="newsTitle">/news/viewTitle.jsp</result>
+		   <result name="newsImage">/news/viewImage.jsp</result>
+		   <result name="advertImage">/news/advertImage.jsp</result>
+		</action> -->
+	 </package>
+	 
+   <package name="ajax" namespace="/ajax/" extends="json-default">
+   <!-- ajax登录 -->
+      <action name="ajaxRequest" class="com.ruyicai.web.action.IndexAction">
+            <result type="json" name="index">/display.jsp</result>
+        </action>
+   <!-- ajax银行卡充值 -->
+       <action name="ajaxCharge" class="com.ruyicai.web.action.ChargeAction">
+           <result type="json" name="chargeIndex">/charge/chargeIndex.jsp</result>
+       </action>    
+    </package>     
+</struts>

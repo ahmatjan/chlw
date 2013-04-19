@@ -1,0 +1,13 @@
+/* CSS Document */
+ul,h5{margin:0;padding:0;list-style:none;}
+#levelmenu{ width:157px; height:400px; border:1px solid #C6C6C6; }
+#levelmenu div.unit ul{width:135px;border-top:none;padding:8px 0 8px 20px;}
+#levelmenu h5{width:157px;height:30px;line-height:30px;overflow:hidden; background:url(../images/ti1_bg1.gif) no-repeat;margin:0; border-bottom:1px dashed #C6C6C6; text-align:center; font-weight:normal;color:#000; font:13px "ÐÂËÎÌå";}
+#levelmenu .menu_bg{ background:url(../images/ti1_bg.gif) no-repeat;}
+#levelmenu h5 a{ width:157px; height:30px; line-height:30px; font-weight:bold;color:#000; font-size:13px; }
+#levelmenu h5 a:hover{ width:157px; height:30px; line-height:30px; display:block;background:url(../images/ti1_bg.gif) no-repeat;}
+#levelmenu div.unit ul{display:none;line-height:30px; margin:0; padding:0;}
+#levelmenu div.current ul{display:block;}
+#levelmenu div.current ul li a{ width:157px; height:30px; line-height:30px; display:block; color:#000; text-decoration:none; text-align:center;}
+#levelmenu div.current ul li a:hover{ color:#fff; width:157px; height:30px; line-height:30px; display:block;background:url(../images/zhh_bg.gif) no-repeat; text-align:center;}
+#levelmenu div.current h5{background-position:left bottom;}
